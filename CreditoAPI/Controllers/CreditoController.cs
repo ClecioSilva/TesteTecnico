@@ -34,6 +34,9 @@ namespace CreditoAPI.Controllers
             credito.DataPrimeiroVencimento < minDataVencimento || credito.DataPrimeiroVencimento > maxDataVencimento)
         {
             statusCredito = "Recusado"; // Altera o status para "Recusado" se alguma validação falhar
+
+            // Retorna um BadRequest com a mensagem indicando o motivo da recusa
+            return BadRequest($"O status do crédito é {statusCredito}. Verifique as condições de solicitação.");
         }
 
         if (credito.DataPrimeiroVencimento < minDataVencimento || credito.DataPrimeiroVencimento > maxDataVencimento)
