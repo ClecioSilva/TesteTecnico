@@ -26,6 +26,16 @@ namespace CreditoAPI.Controllers
         DateTime minDataVencimento = dataAtual.AddDays(15);
         DateTime maxDataVencimento = dataAtual.AddDays(40);
 
+        string statusCredito = "Aprovado"; // Inicializa com o status "Aprovado"
+
+        if (credito.Valor > 1000000 ||
+            credito.QuantidadeParcelas < 5 || credito.QuantidadeParcelas > 72 ||
+            (credito.Tipo == TipoCredito.PessoaJuridica && credito.Valor < 15000) ||
+            credito.DataPrimeiroVencimento < minDataVencimento || credito.DataPrimeiroVencimento > maxDataVencimento)
+        {
+            statusCredito = "Recusado"; // Altera o status para "Recusado" se alguma validação falhar
+        }
+
         if (credito.DataPrimeiroVencimento < minDataVencimento || credito.DataPrimeiroVencimento > maxDataVencimento)
         {
             return BadRequest("A Data do Primeiro Vencimento deve estar entre 15 e 40 dias a partir da data atual.");
@@ -39,6 +49,11 @@ namespace CreditoAPI.Controllers
         if (credito.Tipo == TipoCredito.PessoaJuridica && credito.Valor < 15000)
         {
             return BadRequest("O valor mínimo a ser liberado para Pessoa Jurídica é de R$ 15.000,00.");
+        }
+
+        if (credito.Valor > 1000000)
+        {
+            return BadRequest("O valor máximo permitido para qualquer tipo de empréstimo é de R$ 1.000.000,00.");
         }
 
         decimal taxaJuros = 0;
@@ -66,10 +81,7 @@ namespace CreditoAPI.Controllers
 
         decimal valorJuros = credito.Valor * taxaJuros;
         decimal valorTotalComJuros = credito.Valor + valorJuros;
-
-        string statusCredito = "Aprovado";
-
-        if (credito.Valor > 1000000 || (credito.Tipo == TipoCredito.PessoaJuridica && credito.Valor < 15000) || 
+            if (credito.Valor > 1000000 || (credito.Tipo == TipoCredito.PessoaJuridica && credito.Valor < 15000) || 
             credito.QuantidadeParcelas < 5 || credito.QuantidadeParcelas > 72 || 
             credito.DataPrimeiroVencimento < minDataVencimento || credito.DataPrimeiroVencimento > maxDataVencimento)
         {

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "e00nhV7Wp9RZG+cXUbL5tPaH4BLVQjgMOLb8rJ09I+2y5eVzDtcMORRxw4svfyAoyqEUVBXxmkuAAWUcttnZLA==",
+  "dgSpecHash": "4iAcfeoRSPYqV90YCXGUiSpCmMnNrs3Pu8TTwHNw8WwJNXqqMNOCQs3WKORXckPmEQevnvHDjS7bZdr7gZnwww==",
   "success": true,
-  "projectFilePath": "C:\\Users\\cogv\\My Private Documents\\CreditoAPI\\CreditoAPI.csproj",
+  "projectFilePath": "C:\\Users\\cogv\\My Private Documents\\TesteTecnico\\CreditoAPI\\CreditoAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cogv\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.14\\microsoft.aspnetcore.openapi.7.0.14.nupkg.sha512",
     "C:\\Users\\cogv\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",

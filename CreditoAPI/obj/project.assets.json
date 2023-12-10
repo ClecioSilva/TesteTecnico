@@ -474,11 +474,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cogv\\My Private Documents\\CreditoAPI\\CreditoAPI.csproj",
+      "projectUniqueName": "C:\\Users\\cogv\\My Private Documents\\TesteTecnico\\CreditoAPI\\CreditoAPI.csproj",
       "projectName": "CreditoAPI",
-      "projectPath": "C:\\Users\\cogv\\My Private Documents\\CreditoAPI\\CreditoAPI.csproj",
+      "projectPath": "C:\\Users\\cogv\\My Private Documents\\TesteTecnico\\CreditoAPI\\CreditoAPI.csproj",
       "packagesPath": "C:\\Users\\cogv\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cogv\\My Private Documents\\CreditoAPI\\obj\\",
+      "outputPath": "C:\\Users\\cogv\\My Private Documents\\TesteTecnico\\CreditoAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\cogv\\AppData\\Roaming\\NuGet\\NuGet.Config"
